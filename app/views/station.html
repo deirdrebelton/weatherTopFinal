@@ -1,0 +1,99 @@
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+
+#{extends 'main.html' /}
+#{set title:'Station' /}
+
+#{menu id:"dashboard"/}
+<div class="ui center aligned five column padded grid">
+    <div class="stretched row">
+        <div class="column">
+            <div class="ui vertical fluid menu" style="background-color: black; color: white;">
+                <div class="header item" style="background-color: black; color: white;">
+                    ${station.title} <i class="big icon map marker alternate grey"></i>
+                </div>
+                <div class="item" style="background-color: black; color: white;">
+                    ${station.latitude}
+                    <div class="item" style="background-color: black; color: white;">
+                        ${station.longitude}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui vertical fluid menu" style="background-color: black; color: white;">
+                <div class="header item" style="background-color: black; color: white;">
+                    Weather <i class="big icon cloud sun orange"></i>
+                </div>
+                <div class="item" style="background-color: black; color: white;">
+                    ${station.weatherCode}
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui vertical fluid menu" style="background-color: black; color: white;">
+                <div class="header item" style="background-color: black; color: white;">
+                    Temperature <i class="big icon temperature low blue"></i>
+                </div>
+                <div class="item" style="background-color: black; color: white;">
+                    ${station.convertTemp} degF
+                    <div class="item" style="background-color: black; color: white;">
+                        ${station.tempC} degC
+                        <div class="item" style="background-color: black; color: white;">
+                            Min ${station.minTempValue}
+                            <div class="item" style="background-color: black; color: white;">
+                                Max ${station.maxTempValue}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui vertical fluid menu" style="background-color: black; color: white;">
+                <div class="header item" style="background-color: black; color: white;">
+                    Wind <i class="big icon wind green"></i>
+                </div>
+                <div class="item" style="background-color: black; color: white;">
+                    ${station.convertWindSpeed} bft
+                    <div class="item" style="background-color: black; color: white;">
+                        ${station.convertWindDirection}
+                        <div class="item" style="background-color: black; color: white;">
+                            Feels like ${station.calculateWindChill}
+                            <div class="item" style="background-color: black; color: white;">
+                                Min ${station.minWindSpeedValue}
+                                <div class="item" style="background-color: black; color: white;">
+                                    Max ${station.maxWindSpeedValue}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui vertical fluid menu" style="background-color: black; color: white;">
+                <div class="header item" style="background-color: black; color: white;">
+                    Pressure <i class="big icon sun outline brown"></i>
+                </div>
+                <div class="item" style="background-color: black; color: white;">
+                    ${station.pressure} hPa
+                    <div class="item" style="background-color: black; color: white;">
+                        Min ${station.minPressureValue} hPa
+                        <div class="item" style="background-color: black; color: white;">
+                            Max ${station.maxPressureValue} hPa
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="ui segment">
+    #{listreadings station:station /}
+    #{addreading station:station /}
+</section>
+
