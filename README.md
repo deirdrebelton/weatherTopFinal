@@ -1,6 +1,6 @@
 # weatherTopFinal
 Student Name: Deirdre Belton
-Student Number: W20100053
+Student Number: 20100053
 
 WeatherTop Release 2 has been achieved, except for the deployment of the app. The user has the ability to sign up, log in, add stations and readings, delete stations
 and readings and see the latest reading weather metrics. 
