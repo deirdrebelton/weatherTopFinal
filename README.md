@@ -9,8 +9,8 @@ Note, the temporary files from the project folder have been deleted before uploa
 be used before opening the project in Play.  
 
 Known issue: When you create a station and try to open the folder to the new station, there is an error. It is because my index method in station ctrl 
-for readings associated with a station that doesn't yet have any. I tried to implement an IF statement to say if station.readings != null, execute the code 
-associated with the latest reading and weather conditions, ELSE just load stations.html, but I had no luck with this, unfortunately. 
+is expecting readings associated with a station, but a new station will not have any readings yet. I tried to implement an IF statement to say if 
+station.readings != null, execute the code associated with the latest reading and weather conditions, ELSE just load stations.html, but I had no luck with this, unfortunately. 
 
 References used to help with project: 
 https://www.geeksforgeeks.org/java-program-to-calculate-power-of-a-number/
